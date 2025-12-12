@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h1>Admin Dashboard</h1>
+<p>Welcome, {{ user.username }} (Administrator)</p>
+
+<div class="row">
+    <div class="col-md-3">
+        <div class="card bg-dark text-white mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Total Employees</h5>
+                <p class="card-text">{{ total_employees }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-dark text-white mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Pending Leaves</h5>
+                <p class="card-text">{{ pending_leaves }}</p>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-3">
+        <div class="card bg-dark text-white mb-3">
+            <div class="card-body">
+                <h5 class="card-title">Pending Reviews</h5>
+                <p class="card-text">{{ pending_reviews }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

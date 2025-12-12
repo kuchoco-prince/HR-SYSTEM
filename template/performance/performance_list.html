@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Performance Reviews</h2>
+<a href="{% url 'upload_pdf' %}" class="btn btn-success mb-3">Upload Scanned Appraisal</a>
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>User</th>
+            <th>Remarks</th>
+            <th>Review Date</th>
+            <th>Status</th>
+            <th>Submitted At</th>
+            <th>Approved By</th>
+            <th>Appraisal PDF</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for review in reviews %}
+        <tr>
+            <td>{{ review.user.username }}</td>
+            <td>{{ review.remarks }}</td>
+            <td>{{ review.review_date }}</td>
+            <td>{{ review.status }}</td>
+            <td>{{ review.submitted_at }}</td>
+            <td>{{ review.approved_by }}</td>
+            <td>
+                {% if review.appraisal_pdf %}
+                    <a href="{{ review.appraisal_pdf.url }}" target="_blank">View PDF</a>
+                {% else %}
+                    No file
+                {% endif %}
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

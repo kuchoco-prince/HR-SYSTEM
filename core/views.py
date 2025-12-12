@@ -3,19 +3,20 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def dashboard(request):
-    role = request.user.role
+    # Check user's role
+    role = getattr(request.user, 'role', None)  # Use getattr to avoid AttributeError
 
     if role == "CEO":
-        template = "dashboards/CEO_dashboard.html"
+        template = "dashboard/CEO_dashboard.html"
     elif role == "Director":
-        template = "dashboards/Director_dashboard.html"
+        template = "dashboard/Director_dashboard.html"
     elif role == "RegionalManager":
-        template = "dashboards/Regional_dashboard.html"
+        template = "dashboard/Regional_dashboard.html"
     elif role == "DistrictCoordinator":
-        template = "dashboards/District_dashboard.html"
+        template = "dashboard/District_dashboard.html"
     elif role == "BAC/BRCHead":
-        template = "dashboards/BAC_dashboard.html"
+        template = "dashboard/BAC_dashboard.html"
     else:
-        template = "dashboards/default_dashboard.html"
+        template = "dashboard/user_dashboard.html"  # default dashboard
 
     return render(request, template)

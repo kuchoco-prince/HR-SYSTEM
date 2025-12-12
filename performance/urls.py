@@ -1,6 +1,7 @@
 from django.urls import path
-from .views import PerformanceReviewViewSet
+from . import views   # ← THIS LINE FIXES THE ERROR
 
 urlpatterns = [
-    path('reviews/', PerformanceReviewViewSet.as_view({'get':'list'}), name='performance-reviews'),
+    path('', views.performance_list, name='performance_list'),
+    path('upload/', views.upload_pdf, name='upload_pdf'),
 ]

@@ -121,3 +121,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Use custom User model
 AUTH_USER_MODEL = 'users.User'
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+# Media files (for uploaded PDFs, images, etc.)
+MEDIA_URL = '/media/'  # URL prefix for media files
+MEDIA_ROOT = BASE_DIR / 'media'  # Folder where uploaded files are stored
+STATIC_URL = '/static/'
+STATICFILES_DIRS = [BASE_DIR / "static"]

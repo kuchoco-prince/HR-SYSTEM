@@ -18,7 +18,8 @@ class PerformanceReview(models.Model):
         settings.AUTH_USER_MODEL, related_name='review_approver',
         null=True, blank=True, on_delete=models.SET_NULL
     )
+    # New field for uploaded PDF
+    appraisal_pdf = models.FileField(upload_to='performance_pdfs/', null=True, blank=True)
 
     def __str__(self):
         return f"{self.user.username} - {self.status}"
-

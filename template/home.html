@@ -1,0 +1,80 @@
+<!DOCTYPE html>{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GEA HR Management Software</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fa;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        .header {
+            background: #002c5f;
+            padding: 20px;
+            color: white;
+        }
+        .logo {
+            width: 120px;
+            margin-bottom: 10px;
+        }
+        .container {
+            margin: 50px auto;
+            max-width: 600px;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        h1 {
+            color: #002c5f;
+        }
+        .btn {
+            display: inline-block;
+            margin: 10px;
+            padding: 12px 25px;
+            background: #0078d4;
+            color: white;
+            border-radius: 6px;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        .btn:hover {
+            background: #005fa3;
+        }
+        .footer {
+            margin-top: 40px;
+            font-size: 12px;
+            color: #777;
+        }
+    </style>
+</head>
+
+<body>
+
+ <div class="header">
+    <img src="{% static 'gea_logo.png' %}" alt="GEA Logo" class="logo">
+    <h2>GHANA ENTERPRISE AGENCY</h2>
+</div>
+
+    <div class="container">
+        <h1>HR MANAGEMENT SOFTWARE</h1>
+        <p>Welcome! Use the buttons below to access the HR services.</p>
+
+        <a href="/accounts/login/" class="btn">Login</a>
+        <a href="/accounts/signup/" class="btn">Create Account</a>
+        <a href="/leave/" class="btn">Leave Requests</a>
+        <a href="/performance/" class="btn">Performance Review</a>
+    </div>
+
+    <div class="footer">
+        © 2025 Ghana Enterprise Agency — HRMIS System
+    </div>
+
+</body>
+</html>
